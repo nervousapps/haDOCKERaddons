@@ -2,7 +2,7 @@ version: "3.3"
 services:
     # Silab multiprotocol
     multipan:
-        container_name: multipan-test
+        container_name: multipan
         image: "homeassistant/aarch64-addon-silabs-multiprotocol:dockerCustom"
         env_file: .env
         cap_add:
