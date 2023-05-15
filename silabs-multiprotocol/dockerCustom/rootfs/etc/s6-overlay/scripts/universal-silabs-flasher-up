@@ -22,7 +22,9 @@ if [[ -z "${FIRMWARE}" ]]; then
     exit 0
 fi
 
+# All firmware we flash have a known baudrate of 460800, let cpcd know.
+echo 460800 > /tmp/known-baudrate
+
 log 'info' "Starting universal-silabs-flasher with ${device} (baudrate ${baudrate})"
-exec universal-silabs-flasher --device ${device} --baudrate ${baudrate} \
-     --bootloader-baudrate 115200 \
-     flash --allow-cross-flashing --firmware "/root/${firmware}"
+exec universal-silabs-flasher --device ${device} \
+     flash --ensure-exact-version --allow-cross-flashing --firmware "/root/${firmware}"

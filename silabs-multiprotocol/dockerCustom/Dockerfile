@@ -6,8 +6,9 @@ RUN rm -rf /etc/s6-overlay/s6-rc.d/banner && \
     rm -rf /etc/s6-overlay/s6-rc.d/otbr-agent-rest-discovery && \
     rm -rf /etc/s6-overlay/scripts/otbr-agent-rest-discovery.sh && \
     rm -rf /etc/s6-overlay/s6-rc.d/user/contents.d/otbr-agent-rest-discovery && \
+    rm -rf /etc/s6-overlay/s6-rc.d/cpcd-config && \
+    rm -rf /etc/s6-overlay/s6-rc.d/cpcd/dependencies.d && \
     rm -rf /usr/bin/bashio
-
 COPY rootfs /
 
 # use s6-overlay as init system
