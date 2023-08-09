@@ -12,7 +12,7 @@ Be carefull of firmware baudrate (set at 460800 by default in rootfs/etc/s6-over
 ## TIPS
 
 - When restarting container with a new image, all configuration will be lost.
-In order to make a new thread network, PUT OFF ALL THREAD GEAR, form the network throught the GUI.
+In order to make a new thread network, PUT OFF ALL THREAD GEAR, form the network with same parameters throught the GUI.
 
 ## Pre-requirements
 - docker installed
