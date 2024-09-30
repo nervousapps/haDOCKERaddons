@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.5.2
+
+- Add missing voices supported by Piper (gwryw_gogleddol, bryce, john, norman and paola)
+
+## 1.5.1
+
+- Add voice for English: cori
+
+## 1.5.0
+
+- Add voices for Persian: amir, gyro
+- Add voice for Slovenian: artur
+- Add voice for Turkish: fettah
+- Add voices for French: tom, mls
+- Add voice for Dutch: mls
+- Add voice for German: mls
+
+## 1.4.0
+
+- Add voices for Arabic (kareem), Hungarian (imre), English (libritts_r), and more
+- Fix error when voice contains UTF-8 character (quote url)
+- Fix missing "dataset" key error
+- Fix unnecessary downloads due to /share
+
 ## 1.3.2
 
 - Add voices for Hungarian, Turkish, Portuguese, Slovak, and Czech

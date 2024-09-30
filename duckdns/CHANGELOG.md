@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.18.0
+
+- Update to use s6-overlay to manage service
+- Update base image to Alpine 3.20
+
+## 1.17.0
+
+- Reduce log spam when updating IP address
+
+## 1.16.0
+
+- Update base image to Alpine 3.19
+- Update dehydrated to 0.7.1
+
 ## 1.15.0
 
 - Use Supervisor API to detect IPv6 host addresses, selectable by interface

@@ -13,8 +13,8 @@ Follow these steps to get the add-on installed on your system:
 ## How to use
 
 You will need a 802.15.4 capable radio supported by OpenThread. Home Assistant
-Yellow as well as Home Assistant SkyConnect are both capable to run OpenThread.
-This add-on automatically installs the necessary firmware on these systems.
+Yellow as well as Home Assistant SkyConnect/Connect ZBT-1 are both capable to run
+OpenThread. This add-on automatically installs the necessary firmware on these systems.
 
 If you are using Home Assistant Yellow, choose `/dev/ttyAMA1` as device.
 
@@ -64,6 +64,10 @@ Add-on configuration:
 | autoflash_firmware | Automatically install/update firmware (Home Assistant SkyConnect/Yellow) |
 | otbr_log_level     | Set the log level of the OpenThread BorderRouter Agent     |
 | firewall           | Enable OpenThread Border Router firewall to block unnecessary traffic |
+| nat64              | Enable NAT64 to allow Thread devices accessing IPv4 addresses |
+| network_device     | IP address and port to connect to a network-based RCP (1) |
+
+(1) Note you still need to set a dummy device, e.g., `/dev/ttyS3`. Also, note that the RCP protocol is not designed to be transferred over an IP network: It is a timing-sensitive protocol. You might experience Thread issues if your network link has excessive latencies. As Thread is networking capable, running a Thread border router on the system the RCP radio is plugged in is recommended.
 
 ## Support
 
@@ -83,5 +87,4 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [issue]: https://github.com/home-assistant/addons/issues
 [openthread-platforms]: https://openthread.io/platforms
 [nordic-nrf52840-dongle]: https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dongle
-[nordic-nrf52840-dongle-install]: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/matter/openthread_rcp_nrf_dongle.html
-
+[nordic-nrf52840-dongle-install]: https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/protocols/thread/tools.html#configuring_a_radio_co-processor

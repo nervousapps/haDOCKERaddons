@@ -16,6 +16,11 @@ declare otbr_rest_listen_port
 
 backbone_if="$(bashio::api.supervisor 'GET' '/network/info' '' 'first(.interfaces[] | select (.primary == true)) .interface')"
 device=$(bashio::config 'device')
+
+if bashio::config.has_value 'network_device'; then
+    device="/tmp/ttyOTBR"
+fi
+
 baudrate=$(bashio::config 'baudrate')
 flow_control=""
 
@@ -61,13 +66,16 @@ fi
 
 mkdir -p /data/thread && ln -sft /var/lib /data/thread || bashio::exit.nok "Could not create directory /var/lib/thread to store Thread data."
 
+# We compile the OTBR with firewall support, so otbr-agent tries to update the
+# ipsets. Therefor, create ipsets always to avoid errors from otbr-agent. Just
+# the ipsets  won't have an effect in practice when the firewall is disabled.
+ipset create -exist otbr-ingress-deny-src hash:net family inet6
+ipset create -exist otbr-ingress-deny-src-swap hash:net family inet6
+ipset create -exist otbr-ingress-allow-dst hash:net family inet6
+ipset create -exist otbr-ingress-allow-dst-swap hash:net family inet6
+
 if bashio::config.true 'firewall'; then
     bashio::log.info "Setup OTBR firewall..."
-    ipset create -exist otbr-ingress-deny-src hash:net family inet6
-    ipset create -exist otbr-ingress-deny-src-swap hash:net family inet6
-    ipset create -exist otbr-ingress-allow-dst hash:net family inet6
-    ipset create -exist otbr-ingress-allow-dst-swap hash:net family inet6
-
     ip6tables -N $otbr_forward_ingress_chain
     ip6tables -I FORWARD 1 -o $thread_if -j $otbr_forward_ingress_chain
 
@@ -87,6 +95,13 @@ else
     ip6tables-legacy -P FORWARD ACCEPT
 fi
 
+if bashio::config.true 'nat64'; then
+    iptables -t mangle -A PREROUTING -i ${thread_if} -j MARK --set-mark 0x1001
+    iptables -t nat -A POSTROUTING -m mark --mark 0x1001 -j MASQUERADE
+    iptables -t filter -A FORWARD -o ${backbone_if} -j ACCEPT
+    iptables -t filter -A FORWARD -i ${backbone_if} -j ACCEPT
+fi
+
 otbr_rest_listen="::"
 otbr_rest_listen_port="$(bashio::addon.port 8081)"
 
@@ -104,8 +119,9 @@ echo "${otbr_rest_listen}" > /tmp/otbr-agent-rest-api
 echo "${otbr_rest_listen_port}" >> /tmp/otbr-agent-rest-api
 
 bashio::log.info "Starting otbr-agent..."
-exec s6-notifyoncheck -d -s 300 -w 300 -n 0 \
+exec s6-notifyoncheck -d -s 300 -w 300 -n 0 stdbuf -oL \
     "/usr/sbin/otbr-agent" -I ${thread_if} -B "${backbone_if}" \
         --rest-listen-address "${otbr_rest_listen}" \
-        -d${otbr_log_level_int} -v \
-        "spinel+hdlc+uart://${device}?uart-baudrate=${baudrate}${flow_control}"
+        -d${otbr_log_level_int} -v -s \
+        "spinel+hdlc+uart://${device}?uart-baudrate=${baudrate}${flow_control}" \
+        "trel://${backbone_if}"

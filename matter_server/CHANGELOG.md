@@ -1,5 +1,136 @@
 # Changelog
 
+## 6.5.1
+
+- Bump Python Matter Server to [6.5.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.5.1)
+
+## 6.5.0
+
+- Bump Python Matter Server to [6.5.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.5.0)
+
+## 6.4.2
+
+- Add support for custom Matter Server arguments
+- Add support to install custom Matter Server and Matter SDK (CHIP) versions
+
+## 6.4.1
+
+- Bump Python Matter Server to [6.4.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.4.0)
+
+## 6.4.0
+
+- Use add-on config directory as update directory
+
+## 6.3.1
+
+- Fix Matter SDK log level when using beta flag
+
+## 6.3.0
+
+- Bump Python Matter Server to [6.3.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.3.0)
+
+## 6.2.1
+
+- Bump Python Matter Server to [6.2.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.2.1)
+
+## 6.1.2
+
+- Bump Python Matter Server to [6.1.2](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.1.2)
+
+## 6.1.1
+
+- Bump Python Matter Server to [6.1.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.1.1)
+
+## 6.1.0
+
+- Bump Python Matter Server to [6.1.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.1.0)
+  - This update is required for Home Assistant Core 2024.6.0
+
+## 6.0.0
+
+- Bump Python Matter Server to [6.0.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/6.0.0)
+  - This updates Matter to 1.3
+
+## 5.6.0
+
+- Bump Python Matter Server to [5.10.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.10.0)
+
+## 5.5.1
+
+- Fix logging in case fallback method for determining the primary network interface is used
+
+## 5.5.0
+
+- Bump Python Matter Server to [5.9.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.9.0)
+- Enable Ingress for the Python Matter Server built-in web interface
+- Store PAA root certificates in /data to avoid download on every startup (downloads once a day)
+
+## 5.4.1
+
+- Bump Python Matter Server to [5.8.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.8.1)
+
+## 5.4.0
+
+- Bump Python Matter Server to [5.8.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.8.0)
+
+## 5.3.0
+
+- Bump Python Matter Server to [5.7.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.7.0)
+- Add Matter SDK log options
+
+## 5.2.0
+
+- Bump Python Matter Server to [5.6.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.6.0)
+
+## 5.1.2
+
+- Bump Python Matter Server to [5.5.3](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.5.3)
+
+## 5.1.1
+
+- Bump Python Matter Server to [5.5.2](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.5.2)
+
+## 5.1.0
+
+- Bump Python Matter Server to [5.5.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.5.1)
+- Bind Python WebSocket on internal interface only by default
+
+## 5.0.4
+
+- Correctly bump Python Matter Server to [5.2.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.2.1)
+
+## 5.0.3
+
+- Bump Python Matter Server to [5.2.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.2.1)
+- Pass primary interface to Python Matter server
+
+## 5.0.2
+
+- Bump Python Matter Server to [5.1.4](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.1.4)
+
+## 5.0.1
+
+- Bump Python Matter Server to [5.0.3](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.0.3)
+- Fix matter-server finish script to report exit code
+- Attach gdb debugger in beta mode to print stack traces on crash
+
+## 5.0.0
+
+- Bump Python Matter Server to [5.0.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/5.0.1)
+- Bump minimum required Home Assistant core version to 2023.12 due to breaking changes in the schema
+
+## 4.10.2
+
+- Bump Python Matter Server to [4.0.2](https://github.com/home-assistant-libs/python-matter-server/releases/tag/4.0.2)
+
+## 4.10.1
+
+- Bump Python Matter Server to [4.0.1](https://github.com/home-assistant-libs/python-matter-server/releases/tag/4.0.1)
+
+## 4.10.0
+
+- Add beta flag to the add-on which installs Python Matter Server pre-releases at startup.
+
 ## 4.9.0
 
 - Bump Python Matter Server to [3.7.0](https://github.com/home-assistant-libs/python-matter-server/releases/tag/3.7.0)

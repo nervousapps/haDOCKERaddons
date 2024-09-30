@@ -9,6 +9,8 @@ the [File Editor](/configurator/README.md)).
 Add-ons can be installed and configured via the Home Assistant frontend on
 systems that have installed Home Assistant.
 
+[![Home Assistant - A project from the Open Home Foundation](https://www.openhomefoundation.org/badges/home-assistant.png)](https://www.openhomefoundation.org/)
+
 ## Add-ons provided by this repository
 
 - **[CEC Scanner](/cec_scan/README.md)**
@@ -34,11 +36,6 @@ systems that have installed Home Assistant.
 - **[File editor](/configurator/README.md)**
 
     Simple browser-based file editor for Home Assistant.
-    
-- **[Genie](/almond/README.md)**
-
-    The Open-source, Privacy-Preserving Voice Assistant.
-
 
 - **[Git pull](/git_pull/README.md)**
 
@@ -84,24 +81,6 @@ systems that have installed Home Assistant.
 
     Allow Home Assistant to talk to a Z-Wave Network via a USB Controller.
 
-### Deprecated Add-ons
-
-- **[Hey Ada!](/ada/README.md)**
-
-    Voice assistant powered by Home Assistant.
-
-- **[HomeMatic](/homematic/README.md)**
-
-    HomeMatic central based on OCCU.
-
-    Deprecated in favor of the much more advanced third-party [RaspberryMatic CCU](https://github.com/jens-maus/RaspberryMatic/tree/master/home-assistant-addon).
-
-- **[OpenZWave](/zwave/README.md)**
-
-    Allow Home Assistant to talk to a Z-Wave Network via a USB Controller.
-
-    Deprecated in favor of [Z-Wave JS](/zwave_js/README.md)
-
 ## Support
 
 Got questions?
@@ -110,7 +89,7 @@ You have several options to get them answered:
 
 - The [Home Assistant Discord Chat Server][discord].
 - The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
+- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit].
 
 In case you've found a bug, please [open an issue on our GitHub][issue].
 
