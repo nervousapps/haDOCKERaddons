@@ -1,5 +1,4 @@
-
-This container is now outdated. Please use the current version maintained by b2un0 found here
+# This container is now outdated. Please use the current version maintained by b2un0 found [here](https://github.com/b2un0/silabs-multipan-docker)
 
 # Silabs multiprotocol for HA docker installtion
 
