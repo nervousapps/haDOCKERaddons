@@ -1,3 +1,6 @@
+
+This container is now outdated. Please use the current version maintained by b2un0 found here
+
 # Silabs multiprotocol for HA docker installtion
 
 Basically changed s6-overlay scripts and delete bashio.
